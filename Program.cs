@@ -5,6 +5,12 @@ Console.WriteLine("Do not enter the full name of the currency you wish to use");
 
 string currencySymbol = Console.ReadLine();
 
+while (currencySymbol.Length != 1)
+{
+    Console.WriteLine("Invalid response. Please try again.");
+    currencySymbol = Console.ReadLine();
+}
+
 Console.WriteLine("Next, please enter your hourly rate");
 
 float hourlyRate = float.Parse(Console.ReadLine());
