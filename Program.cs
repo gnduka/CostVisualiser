@@ -20,16 +20,26 @@ namespace Application
 
             Console.WriteLine("Next, please enter your hourly rate");
 
-            float hourlyRate = float.Parse(Console.ReadLine());
+            double hourlyRate = float.Parse(Console.ReadLine());
 
             Console.WriteLine("Finally, what is the cost of the item/service you wish to purchase?");
 
-            float costOfProduct = float.Parse(Console.ReadLine());
+            double costOfProduct = float.Parse(Console.ReadLine());
 
-            float minutesOfWorkRequired = (costOfProduct / hourlyRate) * 60;
+            double hoursOfWorkRequired = Math.Round(costOfProduct / hourlyRate);
+
+            double minutesOfWorkRequired = hoursOfWorkRequired * 60;
 
             // multiplication by 60 here to get convert the figure into minutes instead of hours.
             // this will make subsequent calculations easier.
+
+            double leftoverMinutes = minutesOfWorkRequired % 60;
+
+            Console.WriteLine(leftoverMinutes);
+            Console.WriteLine(hoursOfWorkRequired);
+            Console.WriteLine(minutesOfWorkRequired);
+
+            Console.WriteLine($"It will take you {(int)hoursOfWorkRequired} hours and {leftoverMinutes} minutes of work to pay for this product");
         }
     }
 }
