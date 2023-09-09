@@ -39,7 +39,7 @@ namespace Application
             Console.WriteLine(hoursOfWorkRequired);
             Console.WriteLine(minutesOfWorkRequired);
 
-            Console.WriteLine($"It will take you {(int)hoursOfWorkRequired} hours and {leftoverHours} minutes of work to pay for this product");
+            Console.WriteLine($"It will take you {(int)hoursOfWorkRequired} hours and {leftoverHours} minutes of work to provide {currencySymbol}{costOfProduct}");
         }
     }
 }
