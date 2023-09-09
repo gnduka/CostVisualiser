@@ -26,20 +26,20 @@ namespace Application
 
             double costOfProduct = float.Parse(Console.ReadLine());
 
-            double hoursOfWorkRequired = Math.Round(costOfProduct / hourlyRate);
+            double hoursOfWorkRequired = costOfProduct / hourlyRate;
 
-            double minutesOfWorkRequired = hoursOfWorkRequired * 60;
+            double minutesOfWorkRequired = Math.Round(hoursOfWorkRequired * 60);
 
             // multiplication by 60 here to get convert the figure into minutes instead of hours.
             // this will make subsequent calculations easier.
 
-            double leftoverMinutes = minutesOfWorkRequired % 60;
+            double leftoverHours = minutesOfWorkRequired % 60;
 
-            Console.WriteLine(leftoverMinutes);
+            Console.WriteLine(leftoverHours);
             Console.WriteLine(hoursOfWorkRequired);
             Console.WriteLine(minutesOfWorkRequired);
 
-            Console.WriteLine($"It will take you {(int)hoursOfWorkRequired} hours and {leftoverMinutes} minutes of work to pay for this product");
+            Console.WriteLine($"It will take you {(int)hoursOfWorkRequired} hours and {leftoverHours} minutes of work to pay for this product");
         }
     }
 }
