@@ -35,11 +35,17 @@ namespace Application
 
             double leftoverHours = minutesOfWorkRequired % 60;
 
-            Console.WriteLine(leftoverHours);
-            Console.WriteLine(hoursOfWorkRequired);
-            Console.WriteLine(minutesOfWorkRequired);
+            if (leftoverHours == 0)
+            {
+                Console.WriteLine($"It will take you less than one minute of work to provide {currencySymbol}{costOfProduct}");
+            }
 
-            Console.WriteLine($"It will take you {(int)hoursOfWorkRequired} hours and {leftoverHours} minutes of work to provide {currencySymbol}{costOfProduct}");
+            else
+            {
+                Console.WriteLine($"It will take you {(int)hoursOfWorkRequired} hours and {leftoverHours} minutes of work to provide {currencySymbol}{costOfProduct}");
+            }
+
+            
         }
     }
 }
