@@ -31,7 +31,7 @@ namespace Application
             double minutesOfWorkRequired = Math.Round(hoursOfWorkRequired * 60);
 
             // multiplication by 60 here to get convert the figure into minutes instead of hours.
-            // this will make subsequent calculations easier.
+            // this will make subsequent calculations easier. 
 
             double leftoverHours = minutesOfWorkRequired % 60;
 
