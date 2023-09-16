@@ -24,7 +24,7 @@ namespace Application
 
             Console.WriteLine("Finally, what is the cost of the item/service you wish to purchase?");
 
-            double costOfProduct = float.Parse(Console.ReadLine());
+            double costOfProduct = Math.Round(float.Parse(Console.ReadLine()), 2);
 
             double hoursOfWorkRequired = costOfProduct / hourlyRate;
 
@@ -35,19 +35,50 @@ namespace Application
 
             double leftoverHours = minutesOfWorkRequired % 60;
 
-            if (leftoverHours == 0 && costOfProduct != hourlyRate)
+            if (minutesOfWorkRequired < 1 && costOfProduct != hourlyRate)
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.WriteLine($"It will take you less than one minute of work to provide {currencySymbol}{costOfProduct}");
+                Console.WriteLine($"It will take you {(int)hoursOfWorkRequired} hours and {leftoverHours} minutes of work to provide {currencySymbol}{Math.Round(costOfProduct, 2)}");
+                // displays the text in a dark green colour
             }
 
             else
             {
-                if (hoursOfWorkRequired < 40)
+                if (hoursOfWorkRequired <= 25)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine($"It will take you {(int)hoursOfWorkRequired} hours and {leftoverHours} minutes of work to provide {currencySymbol}{Math.Round(costOfProduct, 2)}");
+                    // displays the text in a dark green colour
+                }
+
+                else if (hoursOfWorkRequired > 25 && hoursOfWorkRequired <= 50)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"It will take you {(int)hoursOfWorkRequired} hours and {leftoverHours} minutes of work to provide {currencySymbol}{Math.Round(costOfProduct, 2)}");
+                    // displays the text in a standard green colour
                 }
-                Console.WriteLine($"It will take you {(int)hoursOfWorkRequired} hours and {leftoverHours} minutes of work to provide {currencySymbol}{Math.Round(costOfProduct,2)}");
+
+                else if (hoursOfWorkRequired > 50 && hoursOfWorkRequired <= 75)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine($"It will take you {(int)hoursOfWorkRequired} hours and {leftoverHours} minutes of work to provide {currencySymbol}{Math.Round(costOfProduct, 2)}");
+                    // displays the text in a dark yellow colour
+                }
+
+                else if (hoursOfWorkRequired > 75 && hoursOfWorkRequired <= 100)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"It will take you {(int)hoursOfWorkRequired} hours and {leftoverHours} minutes of work to provide {currencySymbol}{Math.Round(costOfProduct, 2)}");
+                    // displays the text in a red colour
+                }
+
+                else if (hoursOfWorkRequired > 100)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine($"It will take you {(int)hoursOfWorkRequired} hours and {leftoverHours} minutes of work to provide {currencySymbol}{Math.Round(costOfProduct, 2)}");
+                    // displays the text in a dark red colour
+                }
+
             }
 
             
