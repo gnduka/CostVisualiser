@@ -35,14 +35,19 @@ namespace Application
 
             double leftoverHours = minutesOfWorkRequired % 60;
 
-            if (leftoverHours == 0)
+            if (leftoverHours == 0 && costOfProduct != hourlyRate)
             {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine($"It will take you less than one minute of work to provide {currencySymbol}{costOfProduct}");
             }
 
             else
             {
-                Console.WriteLine($"It will take you {(int)hoursOfWorkRequired} hours and {leftoverHours} minutes of work to provide {currencySymbol}{costOfProduct}");
+                if (hoursOfWorkRequired < 40)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+                Console.WriteLine($"It will take you {(int)hoursOfWorkRequired} hours and {leftoverHours} minutes of work to provide {currencySymbol}{Math.Round(costOfProduct,2)}");
             }
 
             
