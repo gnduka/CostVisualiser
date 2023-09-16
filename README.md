@@ -8,7 +8,7 @@ This perspective never fails to make me think twice about the importance of a pu
 
 As such, I decided it would be appropriate to write software that does all the calculations for me to save time.
 
-The software first asks for which currency you wish to use - this has no overall impact on the calculation itself (yet), but I decided to include this now purely as a decision of design. The software subsequently prompts you to enter your hourly rate and the cost of the item, and calculates the number of hours and minutes you'd need to work to earn the cost of the item.
+The software first asks for which currency you wish to use - this has no overall impact on the calculation itself (yet), but I decided to include this now purely for design purposes. The software subsequently prompts you to enter your hourly rate and the cost of the item, and calculates the number of hours and minutes you'd need to work to earn the cost of the item.
 
 // write about the actual calculations...
 
