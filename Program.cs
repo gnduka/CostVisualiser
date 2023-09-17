@@ -20,7 +20,16 @@ namespace Application
 
             Console.WriteLine("Next, please enter your hourly rate");
 
-            double hourlyRate = float.Parse(Console.ReadLine());
+            try
+            {
+                double hourlyRate = float.Parse(Console.ReadLine());
+            }
+
+            catch
+            {
+                Console.WriteLine("An error occurred. Please retry.");
+            }
+            
 
             Console.WriteLine("Finally, what is the cost of the item/service you wish to purchase?");
 
