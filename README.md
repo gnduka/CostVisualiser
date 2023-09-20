@@ -15,3 +15,6 @@ The software first asks for which currency you wish to use - this has no overall
 // write about how to run the program itself...
 
 // write about exception handling decisions and use of colour?
+
+> [!NOTE]
+> This is a test
