@@ -111,8 +111,8 @@ namespace Application
             {
                 try
                 {
-                    double costOfProductParsed = Math.Round(double.Parse(Console.ReadLine()), 2);
-                    return costOfProductParsed;
+                    double costOfProduct = Math.Round(double.Parse(costOfProductInput), 2);
+                    return costOfProduct;
                 }
 
                 catch
