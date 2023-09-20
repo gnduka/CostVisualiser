@@ -18,22 +18,19 @@ namespace Application
                 currencySymbol = Console.ReadLine();
             }
 
+
             Console.WriteLine("Next, please enter your hourly rate");
 
-            try
-            {
-                double hourlyRate = float.Parse(Console.ReadLine());
-            }
+            double hourlyRate = AssignHourlyRate(Console.ReadLine());
 
-            catch
+            while (hourlyRate == 0)
             {
-                Console.WriteLine("An error occurred. Please retry.");
+                hourlyRate = AssignHourlyRate(Console.ReadLine());
             }
-            
-
+           
             Console.WriteLine("Finally, what is the cost of the item/service you wish to purchase?");
 
-            double costOfProduct = Math.Round(float.Parse(Console.ReadLine()), 2);
+            double costOfProduct = Math.Round(double.Parse(Console.ReadLine()), 2);
 
             double hoursOfWorkRequired = costOfProduct / hourlyRate;
 
@@ -90,7 +87,22 @@ namespace Application
 
             }
 
-            
+            static double AssignHourlyRate(string HourlyRateInput)
+            {
+                try
+                {
+                    double hourlyRate = double.Parse(HourlyRateInput);
+                    return hourlyRate;
+                }
+
+                catch
+                {
+                    Console.WriteLine("An error occurred. Please try and enter your hourly rate again.");
+                    return 0;
+                }
+            }
+
+
         }
     }
 }
