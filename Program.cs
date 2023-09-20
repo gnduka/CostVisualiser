@@ -23,14 +23,19 @@ namespace Application
 
             double hourlyRate = AssignHourlyRate(Console.ReadLine());
 
-            while (hourlyRate == 0)
+            while (hourlyRate == -1)
             {
                 hourlyRate = AssignHourlyRate(Console.ReadLine());
             }
            
             Console.WriteLine("Finally, what is the cost of the item/service you wish to purchase?");
 
-            double costOfProduct = Math.Round(double.Parse(Console.ReadLine()), 2);
+            double costOfProduct = AssignCostOfProduct(Console.ReadLine());
+
+            while (costOfProduct == -1)
+            {
+                costOfProduct = AssignCostOfProduct(Console.ReadLine());
+            }
 
             double hoursOfWorkRequired = costOfProduct / hourlyRate;
 
@@ -98,7 +103,22 @@ namespace Application
                 catch
                 {
                     Console.WriteLine("An error occurred. Please try and enter your hourly rate again.");
-                    return 0;
+                    return -1;
+                }
+            }
+
+            static double AssignCostOfProduct(string costOfProductInput)
+            {
+                try
+                {
+                    double costOfProductParsed = Math.Round(double.Parse(Console.ReadLine()), 2);
+                    return costOfProductParsed;
+                }
+
+                catch
+                {
+                    Console.WriteLine("An error occurred. Please try and enter the cost again.");
+                    return -1;
                 }
             }
 
