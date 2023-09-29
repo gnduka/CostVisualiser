@@ -118,7 +118,7 @@ namespace Application
                 catch
                 {
                     Console.WriteLine("An error occurred. Please try and enter the cost again.");
-                    return -1;
+                    return -1; 
                 }
             }
 
