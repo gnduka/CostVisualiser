@@ -18,8 +18,15 @@ The calculation that is performed is the cost you specified divided by the hourl
 
 Later on, I decided to implement colour into the final output.
 
+|Colour|Meaning|
+|---|---|
+|dark green| 25 hours or less required|
+|green| 26-50 hours required|
+|yellow| 51-75 hours required|
+|red| 76-100 hours required|
+|dark red| 101 or more hours required|
 
 
-// write about exception handling decisions and use of colour?
+// write about exception handling decisions?
 
 ## How to run and use the program
