@@ -25,8 +25,3 @@ Later on, I decided to implement colour into the final output.
 |yellow| 51-75 hours required|
 |red| 76-100 hours required|
 |dark red| 101 or more hours required|
-
-
-// write about exception handling decisions?
-
-## How to run and use the program
